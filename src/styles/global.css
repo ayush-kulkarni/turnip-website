@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand */
+  --color-primary: #e07a52;
+  --color-primary-light: #e89474;
+  --color-primary-dark: #c4622d;
+  --color-secondary: #e8914a;
+  --color-secondary-light: #4a7a35;
+  --color-accent: #e07a52; /* same as primary */
+
+  /* Surfaces (light) — warm stone */
+  --color-background: #f5f0ea;
+  --color-background-accent: #ede6db;
+  --color-surface: #ffffff;
+  --color-surface-variant: #ede6db;
+
+  /* Text (light) — warm espresso */
+  --color-text-primary: #1a1410;
+  --color-text-secondary: #9a8a7a;
+  --color-text-tertiary: #b8a898;
+  --color-text-fourth: #fcebd9;
+}
+
+body {
+  background-color: var(--color-background-accent);
+}

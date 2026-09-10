@@ -1,0 +1,79 @@
+---
+import srcImage from "../assets/turnip_icon_transparent.png";
+import { Image } from "astro:assets";
+import "../styles/global.css";
+---
+
+<header class="p-10">
+  <div
+    class="rounded-3xl shadow-lg"
+    style="background-color: var(--color-primary-light)"
+  >
+    <input type="checkbox" id="menu-toggle" class="hidden peer" />
+
+    <div class="flex flex-row items-center justify-between">
+      <div class="p-2 pr-0 justify-start flex flex-row items-center">
+        <Image src={srcImage} alt="Turnip Icon" class="w-15" />
+        <h1
+          class="font-light text-4xl"
+          style="color: var(--color-primary-dark)"
+        >
+          Turnip
+        </h1>
+      </div>
+      <div
+        class="hidden md:flex flex-row gap-5 font-light text-xl items-center"
+        style="color: var(--color-text-fourth)"
+      >
+        <div><a href="/about">About</a></div>
+        <div><a href="/features">Features</a></div>
+        <div><a href="/support">Support</a></div>
+        <div class="flex items-center pr-5 cursor-pointer select-none">
+          <a
+            href="https://apps.apple.com/us/app/turnip-cooking-made-simple/id6798474011?itscg=30200&itsct=apps_box_badge&mttnsubad=6798474011"
+            class="flex items-center"
+          >
+            <img
+              src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1787788800"
+              alt="Download on the App Store"
+              class="w-40 h-15 block"
+            />
+          </a>
+        </div>
+      </div>
+      <div class="pr-10 md:hidden">
+        <label
+          for="menu-toggle"
+          class="flex flex-col justify-between w-6 h-5 cursor-pointer"
+          aria-label="Menu"
+        >
+          <span class="w-full h-0.5 bg-gray-200 rounded-full"></span>
+          <span class="w-full h-0.5 bg-gray-200 rounded-full"></span>
+          <span class="w-full h-0.5 bg-gray-200 rounded-full"></span>
+        </label>
+      </div>
+    </div>
+
+    <div
+      id="mobile-menu"
+      class="hidden max-md:peer-checked:flex flex-col items-center font-light text-xl"
+      style="color: var(--color-text-fourth)"
+    >
+      <a href="/about" class="py-2">About</a>
+      <a href="/features" class="py-2">Features</a>
+      <a href="/support" class="py-3">Support</a>
+      <div class="flex items-center pb-3 cursor-pointer select-none">
+        <a
+          href="https://apps.apple.com/us/app/turnip-cooking-made-simple/id6798474011?itscg=30200&itsct=apps_box_badge&mttnsubad=6798474011"
+          class="flex items-center"
+        >
+          <img
+            src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1787788800"
+            alt="Download on the App Store"
+            class="w-40 h-15 block"
+          />
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
