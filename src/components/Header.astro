@@ -12,7 +12,12 @@ import { Image } from "astro:assets";
 
     <div class="flex flex-row items-center justify-between">
       <div class="p-2 pr-0 justify-start flex flex-row items-center">
-        <Image src={srcImage} alt="Turnip Icon" class="w-15" />
+        <Image
+          src={srcImage}
+          alt="Turnip Icon"
+          class="w-15"
+          draggable="false"
+        />
         <h1
           class="font-light text-4xl"
           style="color: var(--color-primary-dark)"
