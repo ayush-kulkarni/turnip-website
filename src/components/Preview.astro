@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import srcImage1 from "../assets/turnip_1.png";
+import srcImage2 from "../assets/turnip_2.png";
+---
+
+<div class="flex lg:flex-row flex-col items-center lg:items-start gap-20">
+  <div class="flex flex-col gap-30 min-w-0">
+    <h1
+      class="font-light text-8xl lg:pl-20 lg:translate-y-20"
+      style="color: var(--color-primary-dark)"
+    >
+      Meet Turnip
+    </h1>
+    <p class="font-light text-xl pl-20 text-gray-600">Meet Turnip, the _.</p>
+  </div>
+  <div
+    class="flex flex-row lg:justify-end select-none items-center justify-center lg:ml-auto min-w-0 p-5"
+  >
+    <Image
+      src={srcImage1}
+      alt="Turnip Preview 1"
+      class="w-88 -rotate-5 max-lg:w-60"
+      draggable="false"
+    />
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="3"
+      stroke="var(--color-primary)"
+      class="w-8 h-8 -translate-y-10"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
+    </svg>
+
+    <Image
+      src={srcImage2}
+      alt="Turnip Preview 2"
+      class="w-96 rotate-5 lg:pr-20 max-lg:w-52"
+      draggable="false"
+    />
+  </div>
+</div>
