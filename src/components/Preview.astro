@@ -4,10 +4,12 @@ import srcImage1 from "../assets/turnip_1.png";
 import srcImage2 from "../assets/turnip_2.png";
 ---
 
-<div class="flex lg:flex-row flex-col items-center lg:items-start gap-20">
-  <div class="flex flex-col lg:gap-15 max-lg:gap-5">
+<div
+  class="flex lg:flex-row flex-col items-center gap-20 lg:gap-50 lg:items-start"
+>
+  <div class="flex flex-col lg:gap-8 max-lg:gap-5 min-w-0">
     <h1
-      class="font-medium text-8xl lg:pl-20 lg:translate-y-10 max-lg:text-center text-left"
+      class="font-medium text-8xl lg:pl-20 max-lg:text-center text-left"
       style="color: var(--color-primary-dark)"
     >
       Meet Turnip
@@ -19,7 +21,7 @@ import srcImage2 from "../assets/turnip_2.png";
       Find your next meal with just a picture
     </h2>
     <p
-      class="font-light text-xl lg:pl-20 text-gray-600 w-4xl max-lg:text-lg max-lg:w-lg max-lg:text-center lg:-translate-y-8 text-left"
+      class="font-light text-xl lg:pl-20 text-gray-600 max-lg:text-center lg:-mt-4 text-left max-w-prose max-lg:pl-10 max-lg:pr-10"
     >
       Meet Turnip, the AI-powered app that turns your pantry into your next
       meal. Snap one or more photos of your fridge or pantry and Turnip
@@ -27,22 +29,25 @@ import srcImage2 from "../assets/turnip_2.png";
       right now. No manual entry, no wasted ingredients.
     </p>
   </div>
-  <div
-    class="flex flex-row lg:justify-end select-none items-center justify-center lg:ml-auto min-w-0 p-5"
-  >
-    <Image
-      src={srcImage1}
-      alt="Turnip Preview 1"
-      class="w-88 -rotate-5 max-lg:w-60"
-      draggable="false"
-    />
+
+  <div class="shrink-0 lg:pr-20 -translate-y-10">
+  <div class="relative w-[clamp(336px,50vw,720px)] aspect-4/3 select-none">
+    <div class="absolute left-0 top-[10%] w-[50%]">
+      <Image
+        src={srcImage1}
+        alt="Turnip Preview 1"
+        class="w-full h-auto -rotate-5"
+        draggable="false"
+      />
+    </div>
+
     <svg
       xmlns="http://www.w3.org/2000/svg"
       fill="none"
       viewBox="0 0 24 24"
       stroke-width="3"
       stroke="var(--color-primary)"
-      class="w-8 h-8 -translate-y-10"
+      class="absolute left-[47%] top-[42%] w-[7%] h-auto"
     >
       <path
         stroke-linecap="round"
@@ -50,11 +55,14 @@ import srcImage2 from "../assets/turnip_2.png";
         d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"></path>
     </svg>
 
-    <Image
-      src={srcImage2}
-      alt="Turnip Preview 2"
-      class="w-96 rotate-5 lg:pr-20 max-lg:w-52"
-      draggable="false"
-    />
+    <div class="absolute left-[54%] top-[10%] w-[46%]">
+      <Image
+        src={srcImage2}
+        alt="Turnip Preview 2"
+        class="w-full h-auto rotate-5"
+        draggable="false"
+      />
+    </div>
   </div>
+</div>
 </div>
