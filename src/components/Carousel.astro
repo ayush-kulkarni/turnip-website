@@ -1,0 +1,71 @@
+---
+import Card from "./Card.astro";
+
+const iphone_previews = import.meta.glob<{ default: ImageMetadata }>(
+  "../assets/iphone_previews/*.png",
+  { eager: true },
+);
+const images = Object.values(iphone_previews).map((img) => img.default);
+---
+
+<div class="flex flex-col justify-center items-center gap-5">
+  <h1
+    id="features"
+    class="font-light text-8xl scroll-mt-(--header-height)"
+    style="color: var(--color-primary-dark)"
+  >
+    Features
+  </h1>
+  <div class="relative max-w-[50%] mx-auto p-5">
+    <div
+      id="carousel-track"
+      class="flex overflow-x-auto snap-x snap-mandatory gap-4 scrollbar-hide"
+    >
+      {
+        images.map((img) => (
+          <div class="snap-start shrink-0 w-full sm:w-1/2 lg:w-1/3">
+            <Card imgSrc={img} />
+          </div>
+        ))
+      }
+    </div>
+
+    <button
+      id="carousel-prev"
+      class="absolute -left-4 md:-left-12 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
+      aria-label="Previous"
+    >
+      ‹
+    </button>
+    <button
+      id="carousel-next"
+      class="absolute -right-4 md:-right-12 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow-md"
+      aria-label="Next"
+    >
+      ›
+    </button>
+  </div>
+</div>
+
+<script>
+  const track = document.getElementById("carousel-track") as HTMLElement;
+  const prevBtn = document.getElementById("carousel-prev");
+  const nextBtn = document.getElementById("carousel-next");
+
+  const cards = Array.from(
+    track.querySelectorAll(":scope > div"),
+  ) as HTMLElement[];
+  let currentIndex = 0;
+
+  const goToCard = (index: number) => {
+    currentIndex = Math.max(0, Math.min(index, cards.length - 1));
+    cards[currentIndex].scrollIntoView({
+      behavior: "smooth",
+      inline: "start",
+      block: "nearest",
+    });
+  };
+
+  prevBtn?.addEventListener("click", () => goToCard(currentIndex - 1));
+  nextBtn?.addEventListener("click", () => goToCard(currentIndex + 1));
+</script>

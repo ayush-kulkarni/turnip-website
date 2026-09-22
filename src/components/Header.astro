@@ -3,7 +3,7 @@ import srcImage from "../assets/turnip_icon_transparent.png";
 import { Image } from "astro:assets";
 ---
 
-<header class="p-10 sticky top-0 left-0 right-0 z-999">
+<header id="site-header" class="p-10 sticky top-0 left-0 right-0 z-999">
   <div
     class="rounded-3xl shadow-lg"
     style="background-color: var(--color-primary-light)"
@@ -29,21 +29,29 @@ import { Image } from "astro:assets";
         class="hidden md:flex flex-row font-light text-xl items-center"
         style="color: var(--color-text-fourth)"
       >
-        <div
-          class="hover:rounded-4xl hover:bg-(--color-primary) p-2 px-4 hover:text-(--color-surface-variant) cursor-pointer"
+        <a href="/"
+          ><div
+            class="hover:rounded-4xl hover:bg-(--color-primary) p-2 px-4 hover:text-(--color-surface-variant) cursor-pointer"
+          >
+            Home
+          </div></a
         >
-          <a href="/">Home</a>
-        </div>
-        <div
-          class="hover:rounded-4xl hover:bg-(--color-primary) p-2 px-4 hover:text-(--color-surface-variant) cursor-pointer"
+
+        <a href="#features"
+          ><div
+            class="hover:rounded-4xl hover:bg-(--color-primary) p-2 px-4 hover:text-(--color-surface-variant) cursor-pointer"
+          >
+            Features
+          </div></a
         >
-          <a href="#features">Features</a>
-        </div>
-        <div
-          class="hover:rounded-4xl hover:bg-(--color-primary) p-2 px-4 hover:text-(--color-surface-variant) cursor-pointer"
+
+        <a href="#support"
+          ><div
+            class="hover:rounded-4xl hover:bg-(--color-primary) p-2 px-4 hover:text-(--color-surface-variant) cursor-pointer"
+          >
+            Support
+          </div></a
         >
-          <a href="#support">Support</a>
-        </div>
         <div class="flex items-center px-5 cursor-pointer select-none">
           <a
             href="https://apps.apple.com/us/app/turnip-cooking-made-simple/id6798474011?itscg=30200&itsct=apps_box_badge&mttnsubad=6798474011"
@@ -75,9 +83,9 @@ import { Image } from "astro:assets";
       class="hidden max-md:peer-checked:flex flex-col items-center font-light text-xl"
       style="color: var(--color-text-fourth)"
     >
-      <a href="/about" class="py-2">About</a>
-      <a href="/features" class="py-2">Features</a>
-      <a href="/support" class="py-3">Support</a>
+      <a href="/" class="py-2">Home</a>
+      <a href="#features" class="py-2">Features</a>
+      <a href="#support" class="py-3">Support</a>
       <div class="flex items-center pb-3 cursor-pointer select-none">
         <a
           href="https://apps.apple.com/us/app/turnip-cooking-made-simple/id6798474011?itscg=30200&itsct=apps_box_badge&mttnsubad=6798474011"
@@ -93,3 +101,23 @@ import { Image } from "astro:assets";
     </div>
   </div>
 </header>
+
+<script>
+  const header = document.getElementById("site-header");
+
+  const setHeaderHeightVar = () => {
+    if (header) {
+      document.documentElement.style.setProperty(
+        "--header-height",
+        `${header.offsetHeight}px`,
+      );
+    }
+  };
+
+  if (header) {
+    const observer = new ResizeObserver(setHeaderHeightVar);
+    observer.observe(header);
+  }
+
+  setHeaderHeightVar(); // initial value, immediately
+</script>
