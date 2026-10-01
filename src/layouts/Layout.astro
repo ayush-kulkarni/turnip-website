@@ -10,9 +10,8 @@ interface Props {
 
 const {
   title = "Turnip | Cooking Made Simple",
-  description = "",
-  // need to fill in
-  image = "/og-image.jpg",
+  description = "Meet Turnip, the AI-powered app that allows you to snap a photo of your fridge and instantly hands you recipes you can cook right now. No manual entry, no wasted ingredients.",
+  image = "/og-image.png",
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -23,7 +22,7 @@ const ogImageURL = new URL(image, Astro.site);
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" href="/favicon.ico" />
 
     <!-- Fonts -->
@@ -51,25 +50,27 @@ const ogImageURL = new URL(image, Astro.site);
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
 
-    <!-- <script
+    <script
+      is:inline
       type="application/ld+json"
       set:html={JSON.stringify({
         "@context": "https://schema.org",
-        "@type": "Person",
-        name: "Ayush Kulkarni",
+        "@type": "SoftwareApplication",
+        name: "Turnip",
+        description: description,
         url: Astro.site,
         image: ogImageURL,
-        jobTitle: "CS Student at UIUC",
-        alumniOf: {
-          "@type": "CollegeOrUniversity",
-          name: "University of Illinois Urbana-Champaign",
+        applicationCategory: "LifestyleApplication",
+        operatingSystem: "iOS",
+        downloadUrl:
+          "https://apps.apple.com/us/app/turnip-cooking-made-simple/id6798474011",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
         },
-        sameAs: [
-          "https://github.com/ayush-kulkarni",
-          "https://www.linkedin.com/in/ayushk10",
-        ],
       })}
-    /> -->
+    />
   </head>
   <body>
     <Header />

@@ -40,6 +40,9 @@ import srcImage2 from "../assets/turnip_2.png";
           src="https://toolbox.marketingtools.apple.com/api/v2/badges/download-on-the-app-store/black/en-us?releaseDate=1787788800"
           alt="Download on the App Store"
           class="w-40 h-15 block"
+          width="160"
+          height="60"
+          loading="lazy"
           draggable="false"
         />
       </a>
@@ -53,6 +56,9 @@ import srcImage2 from "../assets/turnip_2.png";
           src={srcImage1}
           alt="Turnip Preview 1"
           class="w-full h-auto -rotate-5"
+          layout="constrained"
+          width={360}
+          priority
           draggable="false"
         />
       </div>
@@ -76,6 +82,9 @@ import srcImage2 from "../assets/turnip_2.png";
           src={srcImage2}
           alt="Turnip Preview 2"
           class="w-full h-auto rotate-5"
+          layout="constrained"
+          width={360}
+          loading="eager"
           draggable="false"
         />
       </div>

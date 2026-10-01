@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tryturnip.app/sitemap-index.xml

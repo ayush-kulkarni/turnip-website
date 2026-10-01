@@ -7,7 +7,7 @@ import tailwindcss from "@tailwindcss/vite";
 // https://astro.build/config
 export default defineConfig({
   srcDir: "./src",
-  site: "http://localhost:4321/",
+  site: "https://tryturnip.app",
 
   //update
   integrations: [sitemap()],
