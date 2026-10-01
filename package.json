@@ -12,7 +12,9 @@
     "astro": "astro",
     "format": "prettier . --write",
     "format:check": "prettier --check",
-    "lint": "eslint 'src/**/*.{js,ts,tsx,astro}'"
+    "lint": "eslint 'src/**/*.{js,ts,tsx,astro}'",
+    "worker:dev": "wrangler dev",
+    "worker:deploy": "wrangler deploy"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
